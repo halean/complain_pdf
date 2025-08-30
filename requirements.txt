@@ -5,3 +5,5 @@ llama-index-vector-stores-chroma
 llama-index-embeddings-openai
 openai
 llama-index-embeddings-huggingface
+gradio
+mammoth
