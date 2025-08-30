@@ -7,3 +7,4 @@ openai
 llama-index-embeddings-huggingface
 gradio
 mammoth
+requests

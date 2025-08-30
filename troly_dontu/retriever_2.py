@@ -7,7 +7,6 @@ from llama_index.vector_stores.chroma import ChromaVectorStore
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 # initialize client
 client = chromadb.PersistentClient(path="chromadb_all_f")
-# chroma_collection = client.get_collection(name="all_vn_laws")
 chroma_collection = client.get_collection(name="all_vn_laws_tei")
 
 # assign chroma as the vector_store to the context
@@ -21,11 +20,8 @@ Use OpenAI embeddings for retrieval to match the
 Requires OPENAI_API_KEY to be set in the environment.
 You can override the model via OPENAI_EMBED_MODEL env var.
 """
-embed_model = OpenAIEmbedding(
-    model=os.getenv("OPENAI_EMBED_MODEL", "text-embedding-3-small")
-)
-
-
+# Initialize embedding model
+# embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 model_name = "Qwen/Qwen3-Embedding-0.6B"
 model_kwargs = {
     "trust_remote_code": True,
