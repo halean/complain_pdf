@@ -193,7 +193,7 @@ device = "cpu"
 
 # Model can be overridden with QWEN3_EMBED_MODEL env var
 model_name = os.getenv("QWEN3_EMBED_MODEL", "Qwen/Qwen3-Embedding-0.6B")
-embed_model = HuggingFaceEmbedding(model_name=model_name, device=device)
+embed_model = HuggingFaceEmbedding(model_name=model_name, device=device, embed_batch_size=4)
 
 
 # ---------- Build index ----------
